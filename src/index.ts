@@ -1,1 +1,1 @@
-export * from './httpStatus'
+export * from './http-status'

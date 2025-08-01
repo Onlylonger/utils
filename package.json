@@ -26,6 +26,7 @@
   "types": "./dist/index.d.ts",
   "exports": {
     ".": "./dist/index.js",
+    "./http-status": "./dist/http-status.js",
     "./package.json": "./package.json"
   },
   "publishConfig": {
