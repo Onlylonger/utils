@@ -1,0 +1,3 @@
+export function useStable() {
+  // TODO
+}
