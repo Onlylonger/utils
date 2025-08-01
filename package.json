@@ -26,7 +26,10 @@
   "types": "./dist/index.d.ts",
   "exports": {
     ".": "./dist/index.js",
-    "./http-status": "./dist/http-status.js",
+    "./configuration": "./dist/configuration/index.js",
+    "./react": "./dist/react/index.js",
+    "./js": "./dist/js/index.js",
+    "./browser": "./dist/browser/index.js",
     "./package.json": "./package.json"
   },
   "publishConfig": {
