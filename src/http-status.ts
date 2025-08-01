@@ -3,196 +3,198 @@
 export const httpStatus = {
   // Informational responses
   100: {
-    msg: "Continue",
+    msg: 'Continue',
   },
   101: {
-    msg: "Switching Protocols",
+    msg: 'Switching Protocols',
   },
   102: {
-    msg: "Processing",
+    msg: 'Processing',
   },
   103: {
-    msg: "Early Hints",
+    msg: 'Early Hints',
   },
   // Successful responses
   200: {
-    msg: "OK",
+    msg: 'OK',
   },
   201: {
-    msg: "Created",
+    msg: 'Created',
   },
   202: {
-    msg: "Accepted",
+    msg: 'Accepted',
   },
   203: {
-    msg: "Non-Authoritative Information",
+    msg: 'Non-Authoritative Information',
   },
   204: {
-    msg: "No Content",
+    msg: 'No Content',
   },
   205: {
-    msg: "Reset Content",
+    msg: 'Reset Content',
   },
   206: {
-    msg: "Partial Content",
+    msg: 'Partial Content',
   },
   207: {
-    msg: "Multi-Status",
+    msg: 'Multi-Status',
   },
   208: {
-    msg: "Already Reported",
+    msg: 'Already Reported',
   },
   226: {
-    msg: "IM Used",
+    msg: 'IM Used',
   },
   // Redirection messages
   300: {
-    msg: "Multiple Choices",
+    msg: 'Multiple Choices',
   },
   301: {
-    msg: "Moved Permanently",
+    msg: 'Moved Permanently',
   },
   302: {
-    msg: "Found",
+    msg: 'Found',
   },
   303: {
-    msg: "See Other",
+    msg: 'See Other',
   },
   304: {
-    msg: "Not Modified",
+    msg: 'Not Modified',
   },
   305: {
-    msg: "Use Proxy",
+    msg: 'Use Proxy',
   },
   306: {
-    msg: "unused",
+    msg: 'unused',
   },
   307: {
-    msg: "Temporary Redirect",
+    msg: 'Temporary Redirect',
   },
   308: {
-    msg: "Permanent Redirect",
+    msg: 'Permanent Redirect',
   },
   // Redirection messages
   400: {
-    msg: "Bad Request",
+    msg: 'Bad Request',
   },
   401: {
-    msg: "Unauthorized",
+    msg: 'Unauthorized',
   },
   402: {
-    msg: "Payment Required",
+    msg: 'Payment Required',
   },
   403: {
-    msg: "Forbidden",
+    msg: 'Forbidden',
   },
   404: {
-    msg: "Not Found",
+    msg: 'Not Found',
   },
   405: {
-    msg: "Method Not Allowed",
+    msg: 'Method Not Allowed',
   },
   406: {
-    msg: "Not Acceptable",
+    msg: 'Not Acceptable',
   },
   407: {
-    msg: "Proxy Authentication Required",
+    msg: 'Proxy Authentication Required',
   },
   408: {
-    msg: "Request Timeout",
+    msg: 'Request Timeout',
   },
   409: {
-    msg: "Conflict",
+    msg: 'Conflict',
   },
   410: {
-    msg: "Gone",
+    msg: 'Gone',
   },
   411: {
-    msg: "Length Required",
+    msg: 'Length Required',
   },
   412: {
-    msg: "Precondition Failed",
+    msg: 'Precondition Failed',
   },
   413: {
-    msg: "Content Too Large",
+    msg: 'Content Too Large',
   },
   414: {
-    msg: "URI Too Long",
+    msg: 'URI Too Long',
   },
   415: {
-    msg: "Unsupported Media Type",
+    msg: 'Unsupported Media Type',
   },
   416: {
-    msg: "Range Not Satisfiable",
+    msg: 'Range Not Satisfiable',
   },
   417: {
-    msg: "Expectation Failed",
+    msg: 'Expectation Failed',
   },
   418: {
     msg: "I'm a teapot",
   },
   421: {
-    msg: "Misdirected Request",
+    msg: 'Misdirected Request',
   },
   422: {
-    msg: "Unprocessable Content",
+    msg: 'Unprocessable Content',
   },
   423: {
-    msg: "Locked",
+    msg: 'Locked',
   },
   424: {
-    msg: "Failed Dependency",
+    msg: 'Failed Dependency',
   },
   425: {
-    msg: "Too Early",
+    msg: 'Too Early',
   },
   426: {
-    msg: "Upgrade Required",
+    msg: 'Upgrade Required',
   },
   428: {
-    msg: "Precondition Required",
+    msg: 'Precondition Required',
   },
   429: {
-    msg: "Too Many Requests",
+    msg: 'Too Many Requests',
   },
   431: {
-    msg: "Request Header Fields Too Large",
+    msg: 'Request Header Fields Too Large',
   },
   451: {
-    msg: "Unavailable For Legal Reasons",
+    msg: 'Unavailable For Legal Reasons',
   },
   // Server error responses
   500: {
-    msg: "Internal Server Error",
+    msg: 'Internal Server Error',
   },
   501: {
-    msg: "Not Implemented",
+    msg: 'Not Implemented',
   },
   502: {
-    msg: "Bad Gateway",
+    msg: 'Bad Gateway',
   },
   503: {
-    msg: "Service Unavailable",
+    msg: 'Service Unavailable',
   },
   504: {
-    msg: "Gateway Timeout",
+    msg: 'Gateway Timeout',
   },
   505: {
-    msg: "HTTP Version Not Supported",
+    msg: 'HTTP Version Not Supported',
   },
   506: {
-    msg: "Variant Also Negotiates",
+    msg: 'Variant Also Negotiates',
   },
   507: {
-    msg: "Insufficient Storage",
+    msg: 'Insufficient Storage',
   },
   508: {
-    msg: "Loop Detected",
+    msg: 'Loop Detected',
   },
   510: {
-    msg: "Not Extended",
+    msg: 'Not Extended',
   },
   511: {
-    msg: "Network Authentication Required",
+    msg: 'Network Authentication Required',
   },
-};
+}
+
+export type HttpStatusCode = keyof typeof httpStatus
