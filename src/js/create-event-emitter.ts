@@ -1,51 +1,50 @@
-type EventType = string | symbol
+type EventName = string | symbol
+type DefaultObject = Record<EventName, (...reset: any[]) => void>
 
-export function createEventEmitter<
-  EventsFn extends Record<EventType, (...reset: any[]) => void>
->(initValue?: Map<keyof EventsFn, EventsFn[keyof EventsFn][]>) {
-  type EventsKey = keyof EventsFn
+export type GenEventsFn<T extends DefaultObject> = Map<keyof T, T[keyof T][]>
 
-  const eventsFn = initValue || new Map<EventsKey, EventsFn[EventsKey][]>()
+export type EventEmitterInstance<T extends DefaultObject> = {
+  eventsFn: Map<keyof T, T[keyof T][]>
+  on: <Key extends keyof T>(name: Key, handler: T[Key]) => void
+  emit: <Key extends keyof T>(name: Key, ...params: Parameters<T[Key]>) => void
+  off: <Key extends keyof T>(name: Key, handler?: T[Key]) => void
+}
 
-  const on = <Key extends EventsKey>(name: Key, handler: EventsFn[Key]) => {
-    const handlers = eventsFn.get(name)
-    if (handlers) {
-      handlers.push(handler)
-    } else {
-      eventsFn.set(name, [handler])
-    }
-  }
-
-  const off = <Key extends EventsKey>(name: Key, handler?: EventsFn[Key]) => {
-    const handlers = eventsFn.get(name)
-    if (handlers) {
-      if (handler) {
-        const index = handlers.indexOf(handler)
-        if (index > -1) {
-          handlers.splice(index, 1)
-        }
-      } else {
-        eventsFn.set(name, [])
-      }
-    }
-  }
-
-  const emit = <Key extends EventsKey>(
-    name: Key,
-    ...params: Parameters<EventsFn[Key]>
-  ) => {
-    const handlers = eventsFn.get(name)
-    if (handlers) {
-      handlers.forEach((handler) => {
-        handler(...params)
-      })
-    }
-  }
+export function createEventEmitter<EventsFn extends DefaultObject>(
+  initValue?: GenEventsFn<EventsFn>
+): EventEmitterInstance<EventsFn> {
+  const eventsFn = initValue || (new Map() as GenEventsFn<EventsFn>)
 
   return {
     eventsFn,
-    on,
-    off,
-    emit,
+    on(name, handler) {
+      const handlers = eventsFn.get(name)
+      if (handlers) {
+        handlers.push(handler)
+      } else {
+        eventsFn.set(name, [handler])
+      }
+    },
+    off(name, handler) {
+      const handlers = eventsFn.get(name)
+      if (handlers) {
+        if (handler) {
+          const index = handlers.indexOf(handler)
+          if (index > -1) {
+            handlers.splice(index, 1)
+          }
+        } else {
+          eventsFn.set(name, [])
+        }
+      }
+    },
+    emit(name, ...params) {
+      const handlers = eventsFn.get(name)
+      if (handlers) {
+        handlers.forEach((handler) => {
+          handler(...params)
+        })
+      }
+    },
   }
 }
