@@ -194,15 +194,3 @@ describe('test createEventEmitter function', () => {
     })
   })
 })
-// const emitter = createEventEmitter<{
-//   load: (c: number, d: number) => void
-// }>()
-
-// function demo() {
-//   console.log(name)
-// }
-
-// emitter.on('load', demo)
-
-// emitter.emit('load', 1, 2)
-// emitter.off('load',demo)
