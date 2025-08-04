@@ -6,5 +6,6 @@ export default defineConfig([
     platform: 'neutral',
     dts: true,
     unbundle: true,
+    treeshake: false,
   },
 ])
