@@ -7,5 +7,6 @@ export default defineConfig([
     dts: true,
     unbundle: true,
     treeshake: false,
+    external: ['react', 'react-dom'],
   },
 ])

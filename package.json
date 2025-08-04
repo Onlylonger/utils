@@ -25,11 +25,26 @@
   "module": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "exports": {
-    ".": "./dist/index.js",
-    "./configuration": "./dist/configuration/index.js",
-    "./react": "./dist/react/index.js",
-    "./js": "./dist/js/index.js",
-    "./browser": "./dist/browser/index.js",
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    },
+    "./configuration": {
+      "import": "./dist/configuration/index.js",
+      "types": "./dist/configuration/index.d.ts"
+    },
+    "./react": {
+      "import": "./dist/react/index.js",
+      "types": "./dist/react/index.d.ts"
+    },
+    "./js": {
+      "import": "./dist/js/index.js",
+      "types": "./dist/js/index.d.ts"
+    },
+    "./browser": {
+      "import": "./dist/browser/index.js",
+      "types": "./dist/browser/index.d.ts"
+    },
     "./package.json": "./package.json"
   },
   "publishConfig": {
@@ -45,7 +60,9 @@
   "devDependencies": {
     "@types/lodash-es": "^4.17.12",
     "@types/node": "^22.15.17",
+    "@types/react": "^19.1.9",
     "bumpp": "^10.1.0",
+    "react": "^19.1.1",
     "tsdown": "^0.13.1",
     "typescript": "^5.8.3",
     "vitest": "^3.1.3"
