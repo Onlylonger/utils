@@ -1,6 +1,6 @@
 {
   "name": "@shilong/utils",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "description": "Common utils and configuration",
   "packageManager": "pnpm@10.6.3",
   "keywords": [
