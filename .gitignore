@@ -4,3 +4,4 @@ dist
 .DS_Store
 
 docs/.vitepress/cache
+__screenshots__
