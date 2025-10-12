@@ -1,5 +1,5 @@
 import { describe, expect, test } from 'vitest'
-import { merge } from '../src/js/merge'
+import { merge } from '../../src/js/merge'
 
 describe('test merge function', () => {
   test('object recursion', () => {

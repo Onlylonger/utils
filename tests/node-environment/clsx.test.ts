@@ -1,5 +1,5 @@
 import { describe, expect, test } from 'vitest'
-import { clsx } from '../src/js/clsx'
+import { clsx } from '../../src/js/clsx'
 
 describe('test clsx function', () => {
   test('should clsx is a function', () => {

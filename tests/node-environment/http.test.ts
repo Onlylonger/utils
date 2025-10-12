@@ -1,5 +1,5 @@
 import { describe, expect, test } from 'vitest'
-import { httpStatus } from '../src'
+import { httpStatus } from '../../src'
 
 describe('test common httpstatus msg', () => {
   test('should 200 exist and msg is ok', () => {

@@ -3,7 +3,7 @@ import {
   createEventEmitter,
   EventEmitterInstance,
   GenEventsFn,
-} from '../src/js/create-event-emitter'
+} from '../../src/js/create-event-emitter'
 
 describe('test createEventEmitter function', () => {
   test('should createEventEmitter be a function', () => {
